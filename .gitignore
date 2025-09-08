@@ -24,8 +24,6 @@ Thumbs.db
 # Selenium-specific (optional, if you generate reports/screenshots)
 test-output/
 reports/
-*.png
-*.jpg
 
 # Environment files
 .env
