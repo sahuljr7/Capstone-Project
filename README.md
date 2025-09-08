@@ -192,17 +192,6 @@ Below is the **important part of `pom.xml`** you need for this project:
 
 ---
 
-## 🧪 Test Reports
-
-After execution, reports will be available in:
-
-```
-target/surefire-reports/
-target/cucumber-reports/
-```
-
----
-
 ## 📌 Example Feature File (`Login.feature`)
 
 ```gherkin
