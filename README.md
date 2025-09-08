@@ -1,4 +1,4 @@
-# 🚀 Final Capstone Project - SauceDemo Automation
+# Final Capstone Project - SauceDemo Automation
 
 ![Java](https://img.shields.io/badge/Java-17-blue?style=flat-square&logo=java)
 ![Maven](https://img.shields.io/badge/Maven-Build-orange?style=flat-square&logo=apachemaven)
@@ -20,6 +20,7 @@ It automates the [SauceDemo](https://www.saucedemo.com/) web application, coveri
 - 🔑 Login  
 - 🛒 Add to Cart  
 - 📦 Checkout  
+- 🔄 Sorting
 - ✅ End-to-End Purchase Flow  
 
 ---
@@ -27,41 +28,41 @@ It automates the [SauceDemo](https://www.saucedemo.com/) web application, coveri
 ## 📂 Project Structure
 
 ```
-capstone
-│   pom.xml
-│   README.md
-│   testng.xml
+capstone/
 │
-├───reports
+├── 📄 pom.xml                     # Maven dependencies and build configuration
+├── 📄 README.md                   # Project documentation
+├── 📄 testng.xml                  # TestNG suite configuration
 │
-├───src
-│   ├───main
-│   │   └───java
-│   │       ├───pages
-│   │       │       LoginPage.java
-│   │       │
-│   │       └───utils
-│   │               ConfigReader.java
-│   │               DriverFactory.java
-│   │               ScreenshotUtil.java
+├── 📁 reports/                    # Generated test reports and logs
+│
+├── 📁 src/
+│   ├── 📁 main/java/
+│   │   ├── 📁 pages/              # Page Object Model classes
+│   │   │   └── LoginPage.java     # Login page object
+│   │   │
+│   │   └── 📁 utils/              # Utility classes
+│   │       ├── ConfigReader.java  # Configuration file reader
+│   │       ├── DriverFactory.java # WebDriver factory
+│   │       └── ScreenshotUtil.java # Screenshot utilities
 │   │
-│   └───test
-│       ├───java
-│       │   ├───runners
-│       │   │       TestRunner.java
+│   └── 📁 test/
+│       ├── 📁 java/
+│       │   ├── 📁 runners/
+│       │   │   └── TestRunner.java # Cucumber test runner
 │       │   │
-│       │   └───stepDefinitions
-│       │           SauceDemoSteps.java
+│       │   └── 📁 stepDefinitions/
+│       │       └── SauceDemoSteps.java # BDD step definitions
 │       │
-│       └───resources
-│           ├───features
-│           │       SauceDemo.feature
+│       └── 📁 resources/
+│           ├── 📁 features/
+│           │   └── SauceDemo.feature # Gherkin feature files
 │           │
-│           config.properties
+│           └── config.properties   # Application configuration
 │
-├───target
+├── 📁 target/                     # Maven build output
 │
-└───test-output
+└── 📁 test-output/                # TestNG generated reports
 
 ````
 
@@ -106,6 +107,46 @@ mvn -Dtest=TestRunner test
 ```bash
 mvn verify
 ```
+
+## 🧪 Running Tests
+
+### 🎯 TestNG Execution
+
+```bash
+# Run all tests
+mvn clean test
+
+# Run specific test suite
+mvn test -DsuiteXmlFile=testng.xml
+
+# Run with specific browser
+mvn test -Dbrowser=firefox
+
+# Run tests in parallel
+mvn test -Dparallel=methods -DthreadCount=3
+```
+
+### 🥒 Cucumber Execution
+
+```bash
+# Run Cucumber tests
+mvn test -Dtest=TestRunner
+
+# Run specific scenarios by tags
+mvn test -Dtest=TestRunner -Dcucumber.filter.tags="@smoke"
+
+# Generate Cucumber reports
+mvn test -Dcucumber.plugin="html:target/cucumber-reports"
+```
+
+### 📊 Test Reports
+
+After test execution, reports are generated in multiple formats:
+
+- **ExtentReports**: `reports/ExtentReport.html`
+- **TestNG Reports**: `test-output/index.html`
+- **Cucumber Reports**: `target/cucumber-reports/`
+- **Screenshots**: `reports/screenshots/`
 
 ---
 
