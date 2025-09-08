@@ -118,12 +118,6 @@ mvn clean test
 
 # Run specific test suite
 mvn test -DsuiteXmlFile=testng.xml
-
-# Run with specific browser
-mvn test -Dbrowser=firefox
-
-# Run tests in parallel
-mvn test -Dparallel=methods -DthreadCount=3
 ```
 
 ### 🥒 Cucumber Execution
@@ -131,9 +125,6 @@ mvn test -Dparallel=methods -DthreadCount=3
 ```bash
 # Run Cucumber tests
 mvn test -Dtest=TestRunner
-
-# Run specific scenarios by tags
-mvn test -Dtest=TestRunner -Dcucumber.filter.tags="@smoke"
 
 # Generate Cucumber reports
 mvn test -Dcucumber.plugin="html:target/cucumber-reports"
