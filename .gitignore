@@ -1,0 +1,36 @@
+# Eclipse-specific files
+.project
+.classpath
+.settings/
+
+# Maven target directory
+/target/
+
+# Eclipse working sets and metadata
+*.launch
+*.log
+.metadata/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Java build files
+*.class
+
+# Logs
+*.log
+
+# Selenium-specific (optional, if you generate reports/screenshots)
+test-output/
+screenshots/
+reports/
+*.png
+*.jpg
+
+# Environment files
+.env
+
+# Temporary files
+*.tmp
+*.swp
