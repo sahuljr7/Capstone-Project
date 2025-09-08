@@ -27,7 +27,7 @@ pipeline {
                     alwaysLinkToLastBuild: true,
                     keepAll: true,
                     reportDir: 'reports',
-                    reportFiles: 'ExtentReport.html',
+                    reportFiles: 'cucumber-html-report.html',
                     reportName: 'Test Report'
                 ])
             }
