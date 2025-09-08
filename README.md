@@ -27,24 +27,41 @@ It automates the [SauceDemo](https://www.saucedemo.com/) web application, coveri
 ## 📂 Project Structure
 
 ```
-
-final-capstone-project/
-│── pom.xml                        # Maven dependencies & build config
-│── README.md                      # Project documentation
+capstone
+│   pom.xml
+│   README.md
+│   testng.xml
 │
-├── src/
-│   ├── main/
-│   │   └── java/
-│   │       └── utils/             # Utility classes (DriverFactory, ConfigReader, ScreenshotUtil)
+├───reports
+│
+├───src
+│   ├───main
+│   │   └───java
+│   │       ├───pages
+│   │       │       LoginPage.java
+│   │       │
+│   │       └───utils
+│   │               ConfigReader.java
+│   │               DriverFactory.java
+│   │               ScreenshotUtil.java
 │   │
-│   └── test/
-│       └── java/
-│           ├── pages/             # Page Object Model classes (LoginPage, ProductsPage, CheckoutPage)
-│           ├── stepDefinitions/   # Cucumber Step Definitions
-│           ├── runners/           # TestNG/Cucumber Test Runners
-│           └── features/          # .feature files (BDD Scenarios)
+│   └───test
+│       ├───java
+│       │   ├───runners
+│       │   │       TestRunner.java
+│       │   │
+│       │   └───stepDefinitions
+│       │           SauceDemoSteps.java
+│       │
+│       └───resources
+│           ├───features
+│           │       SauceDemo.feature
+│           │
+│           config.properties
 │
-└── target/                        # Auto-generated test reports & compiled code
+├───target
+│
+└───test-output
 
 ````
 
